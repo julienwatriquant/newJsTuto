@@ -72,3 +72,19 @@ function fruit(nom,provenance,prix){
 let fruit1 = new fruit("fraise","maroc",5 +" €uros");
 fruit1.voir();
 
+//------------------------------ Les classes-----------------------------------
+// la convention veut que le mot clé commence toujours par une majuscule
+
+class Personne{
+    constructor(prenom,nom,age){
+        this.prenom = prenom;
+        this.nom = nom;
+        this.age = age;
+        }
+    sePresenter(){
+        console.log("bonjour je m'appelle " + this.prenom + ' '+ this.nom+" et mon age est "+this.age);
+        
+    }
+}
+let juju = new Personne("julien","wat",32 +" ans");
+juju.sePresenter();
