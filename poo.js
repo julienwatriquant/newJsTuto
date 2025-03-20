@@ -88,3 +88,47 @@ class Personne{
 }
 let juju = new Personne("julien","wat",32 +" ans");
 juju.sePresenter();
+
+//------------------------------------Les héritages-----------------------------------------
+
+class Animal{
+    constructor(nbPattes,poids){
+        this.nbPattes = nbPattes;
+        this.poids  = poids;
+        this.presentation = () =>{
+            console.log("un animal a " +this.nbPattes+" pattes et qui pese "+ this.poids+" kgs");
+            
+        }
+    }
+
+}
+let vache = new Animal(4,250);
+vache.presentation();
+
+class Oiseau extends Animal{
+    constructor(nbPattes,poids,longeurAiles){
+        super(nbPattes,poids);
+        this.longeurAiles = longeurAiles;
+    }
+    voler(){
+        console.log("avec une poids de "+ this.poids +" kg et une envergure d'ailes "+this.longeurAiles+" cet oiseau volle tres haut !");
+        
+    }
+}
+let aigleRoyal = new Oiseau(2,5,2);
+aigleRoyal.voler();
+
+class sanglier extends Oiseau{
+    constructor(nbPattes,poids,region,nom){
+        super(nbPattes,poids);
+        this.region = region;
+        this.nom = nom;
+    }
+    description(){
+        console.log("avec "+ this.nbPattes +" pattes cet animal pese "+ this.poids +" kg et vient de la region de "+ this.region +" , c'est un "+ this.nom +" .");
+        
+    }
+}
+
+let chevreuil = new sanglier(4,80,"picardie","sanglier");
+chevreuil.description();
